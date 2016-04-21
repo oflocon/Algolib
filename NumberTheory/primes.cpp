@@ -8,15 +8,16 @@ void sieveprecal()
 	ll i,j;
   for(i=2; i < 100010;i++)
     {
-		if(arr[i] == 0)               // marks prime numbers using sieve
+	if(arr[i] == 0)               // marks prime numbers using sieve
         { 
-			      primes.pb(i);
+	    primes.pb(i);
             isPrim[i]=1;
             j=i;
-		      	while(j <100010){arr[j] = 1;j+=i;}
+  	    while(j <100010){arr[j] = 1;j+=i;}
 
-	    	}
-	  }
+	 }
+    	
+    }
 }
 
 
@@ -25,11 +26,11 @@ void sieveandlcmprefix()             //using sieve for calculation of prefix lcm
   lcm[1]=1;lcm[0]=0;
   for(int i=2; i < 300010;i++)
     {
-		if(!arr[i])
+	if(!arr[i])
         {
-            int j=i;
-			      while(j <300010){arr[j] = i;j+=i;}
-         }
+            	int j=i;
+		while(j <300010){arr[j] = i;j+=i;}
+        }
          int  p=arr[i],j=i;
          while(j%p==0)j/=p;
 
@@ -44,9 +45,9 @@ int sieved[200110];
 
 void sieve(ll a ,ll b)              // sieve from a to b ,where range of a and b can be between int 
 {
-	   ll i,j,k,flag,st=a;
+	ll i,j,k,flag,st=a;
 
-     memset(sieved,-1,sizeof sieved);
+     	memset(sieved,-1,sizeof sieved);
 
     for(i =0;i < primes.size();i++)
     {
@@ -55,10 +56,10 @@ void sieve(ll a ,ll b)              // sieve from a to b ,where range of a and b
 
           while(1)
           {
-                     int prod = j*primes[i];
-				             if(prod > b)break;
-                     if(prod >= a)sieved[prod-a] = 1;
-				     j++;
+                int prod = j*primes[i];
+		if(prod > b)break;
+                if(prod >= a)sieved[prod-a] = 1;
+		j++;
           }
     }
 		//for(i= 0;i <= b-a;i++)if(sieved[i] == -1)//its a prime //cout << i + a << endl;
