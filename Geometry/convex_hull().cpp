@@ -9,6 +9,8 @@
         }
     };
     vector<point>H; 
+    
+    //returns negative if clockwise , 0 if colinear and positive if counterclockwise
     int orient( point p1, point p2, point p3)
     {
         re (p2.x-p1.x)*(p3.y-p2.y)-(p2.y-p1.y)*(p3.x-p1.x);
