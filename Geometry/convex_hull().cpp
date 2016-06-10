@@ -8,7 +8,7 @@
             re x<p.x || (x==p.x && y<p.y);
         }
     };
-    vector<point>H; 
+   
     
     //returns negative if clockwise , 0 if colinear and positive if counterclockwise
     int orient( point p1, point p2, point p3)
@@ -20,7 +20,7 @@
     {
         int n=p.size();
         int k=0;
-        vector<point>h(2*n);
+        vector<point>H(2*n);
         
         sort(p.begin(),p.end());
         
