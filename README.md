@@ -1,2 +1,2 @@
 # Algolib
-Conatains implemnetations of major Algorithms 
+Contains implementations of major Algorithms 
