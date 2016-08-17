@@ -60,32 +60,37 @@ int main()
         
         cin>>e;
     
-        fr(i,0,e){
+        fr(i,0,e)
+        {
             int u,v;
             cin>>u>>v;
             g[u].pb(v);
             g2[v].pb(u);//reverse graph
         }
+    
     int com=0;    
     fr(i,1,n+1)if(!v[i])dfs(i);
     
     rf(i,sol.size()-1,0)
-     if(v[sol[i]]){
+     if(v[sol[i]])
+     {
         dfs2(sol[i],com++); // starting from sink and then finding number of components
         soln[com-1]=true;
-    } 
+     } 
 
-    fr(i,1,n+1){
+    fr(i,1,n+1)
+    {
         fr(j,0,g[i].size())
         {
-            if(compo[i]!=compo[g[i][j]]){
-                 soln[compo[i]]=false; the components in not valid
-             break;
+            if(compo[i]!=compo[g[i][j]])
+            {
+                 soln[compo[i]]=false;    //the components in not valid
+                 break;
             }
         }
     }    
 
-    fr(i,1,n+1)if(soln[compo[i]])cout<<i<<" ";prints each node in SCC
+    fr(i,1,n+1)if(soln[compo[i]])cout<<i<<" ";   //prints each node in SCC
     cout<<endl;
 
     } 
