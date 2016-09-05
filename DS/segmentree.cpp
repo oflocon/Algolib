@@ -10,6 +10,19 @@ void build(int x,int l,int r)
     
    //do your thing
 }
+//point update 
+void update(int x, int l, int r,int idx, int val)
+{
+	if(idx<l || idx>r || l>r)re ;
+	if(l==r)st[x]=val;
+
+	int mid=(l+r)>>1,lt=2*x,rt=2*x+1;
+	update(lt,l,mid,idx,val);
+	update(rt,mid+1,r,idx,val);
+	st[x]=max(st[lt],st[rt]);
+}
+
+//range update
 void update(int x,int l,int r,int i,int j,int val)
 {
     if(l>j || i>r)re ;
