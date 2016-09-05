@@ -14,7 +14,7 @@ void build(int x,int l,int r)
 void update(int x, int l, int r,int idx, int val)
 {
 	if(idx<l || idx>r || l>r)re ;
-	if(l==r)st[x]=val;
+	if(l==r){st[x]=val;re ;}
 
 	int mid=(l+r)>>1,lt=2*x,rt=2*x+1;
 	update(lt,l,mid,idx,val);
