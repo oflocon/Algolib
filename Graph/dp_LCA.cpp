@@ -21,11 +21,12 @@ int lca(int x, int y)
 void buildlca()
 {
 	int i,j;
+	// check if zero based indexing or 1 based indexing  here and ....
 	for (i = 0; i<n; i++)P[i][0] = par[i];   // if we are building online then  for each given parent , just equate to T[i]=p;
 
 	for (j = 1; (1<<j)<n; j++)
 	{
-		for (i = 0; i<n; i++)
+		for (i = 0; i<n; i++)// here 
 		{
 			if (P[i][j - 1] != -1)P[i][j] = P[P[i][j - 1]][j - 1];  // no need to check this condition actually
 		}
