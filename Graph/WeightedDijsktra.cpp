@@ -1,4 +1,10 @@
+// check time timit strictness , if less than 1 s don't use this one 
+
+vector<pair<ll,ll> >g[MAXN];
+ll d[MAXN];
+
 bool mark[MAXN];
+const ll inf=1e18;
 
 void dijkstra(int v){
  	fill(d,d + n, inf);
