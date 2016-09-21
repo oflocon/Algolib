@@ -6,25 +6,32 @@ ll d[MAXN];
 bool mark[MAXN];
 const ll inf=1e18;
 
-void dijkstra(int v){
+void dijkstra(ll v)
+{
  	fill(d,d + n, inf);
  	fill(mark, mark + n, false);
    	d[v] = 0;
-	 int u;
-	 priority_queue<pair<int,int>,vector<pair<int,int> >, less<pair<int,int> > > pq;
-	
-	 pq.push({d[v], v});
-	
-	 while(!pq.empty()){
-			 u = pq.top().ss;
-			pq.pop();
+	ll u;
+	set<pair<int,int> >q;
+
+	q.insert(mpk(0,v));
+
+	while(!q.empty())
+	{
+			u = q.begin()->ss;
+			q.erase(q.begin());
 			if(mark[u])
 			continue;
 			mark[u] = true;
-			for(auto p : g[u]){ //g[v][i] = pair(vertex, weight)
-				if(d[p.ff] > d[u] + p.ss){
+			for( int i=0; i<g[u].size();i++)
+			{
+
+				pi p=g[u][i];
+				if(d[p.ff] > d[u] + p.ss)
+				{
+
 					d[p.ff] = d[u] + p.ss;
-					pq.push({d[p.ff], p.ff});
+					q.insert(mpk(d[p.ff],p.ff));
 				}
 			}
 	}
