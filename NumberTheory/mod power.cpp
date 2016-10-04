@@ -1,13 +1,11 @@
-
-ll powd(ll a, ll b)
+ll powd(ll a,ll b)
 {
-    ll x=1,y=a;
-    
-    while(b>0)
-    {
-        if(b%2==1)x*=y,x%=MOD;
-        y*=y;y%=MOD;
-        b/=2;
-    }
-    re x;
+	ll c = 1, d = a;
+	while (b)
+	{
+		if (b & 1) c = (c*d) % MOD;
+		d = (d*d) % MOD;
+		b >>= 1;
+	}
+	return c;
 }
