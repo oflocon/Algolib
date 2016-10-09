@@ -19,7 +19,7 @@ void sieveprecal()
     	
     	}
 }
-
+////////////////////////////////////////////////////////////////////////////////////////
 
 void sieveandlcmprefix()             //using sieve for calculation of prefix lcm
 {
@@ -40,6 +40,8 @@ void sieveandlcmprefix()             //using sieve for calculation of prefix lcm
      	}
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+prime sieve
 
 int sieved[200110];
 
@@ -65,7 +67,8 @@ void sieve(ll a ,ll b)              // sieve from a to b ,where range of a and b
 		//for(i= 0;i <= b-a;i++)if(sieved[i] == -1)//its a prime //cout << i + a << endl;
 }
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+euler sieve for small numbers 
 
 void phi()                 //phi function 
 {
@@ -82,6 +85,43 @@ void phi()                 //phi function
     		}
   	}
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+euler sieve
+
+void sieve(ll a ,ll b)              // sieve from a to b ,where range of a and b can be between int
+{
+	ll j,k,st=a,i;
+
+     	fr(i,0,b-a+1)r[i]=phi[i]=a+i;
+
+	for(i =0;i < primes.size();i++)
+	{
+		j = a/primes[i];
+		if(j < 2)j = 2;
+
+		while(1)
+		{
+			int prod = j*primes[i];
+			if(prod > b)break;
+			if(prod >= a)
+			{
+				phi[prod-a]-=(phi[prod-a]/primes[i]);
+				while(r[prod-a]%primes[i]==0)r[prod-a]/=primes[i];
+			}
+			j++;
+		}
+	}
+	
+    for(i= 0;i <= b-a;i++)if(r[i]>1)phi[i]-=phi[i]/r[i];
+
+    for(i=0;i<=b-a;i++)printf("%d\n",phi[i]);
+
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+mobius function
+
 // calculate mobius for every value upto MAXN,first is for smallest prime fators
 ll mob[MAXN];int p[MAXN];
 
