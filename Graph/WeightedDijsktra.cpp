@@ -8,8 +8,8 @@ const ll inf=1e18;
 
 void dijkstra(ll v)
 {
- 	fill(d,d + n, inf);
- 	fill(mark, mark + n, false);
+ 	fill(d,d + n+2, inf);
+ 	fill(mark, mark + n+2, false);
    	d[v] = 0;
 	ll u;
 	set<pair<int,int> >q;
