@@ -29,7 +29,7 @@ void dijkstra(ll v)
 				pi p=g[u][i];
 				if(d[p.ff] > d[u] + p.ss)
 				{
-
+					if(d[p.ff]!=INT_MAX){q.erase(q.find(mpk(d[p.ff],p.ff)));}
 					d[p.ff] = d[u] + p.ss;
 					q.insert(mpk(d[p.ff],p.ff));
 				}
