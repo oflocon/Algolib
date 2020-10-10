@@ -1,5 +1,4 @@
 
-// bridge tree template begins here  ~ by  Tanuj Khattar  //
 
 vector<int> tree[N]; 			// The bridge edge tree formed from the given graph
 vector<int> graph[N];
